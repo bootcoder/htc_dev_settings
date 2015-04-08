@@ -4,9 +4,6 @@ echo "Loading ~/.bash_profile a shell script that runs in every new terminal you
 # $VARIABLE will render before the rest of the command is executed
 echo "Logged in as $USER at $(hostname)"
 
-# Load RVM into a shell session *as a function*
-# Path for RVM
-
 # Rbenv autocomplete and shims
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Path for RBENV
@@ -22,8 +19,6 @@ test -d $HOME/.rbenv/ && PATH="$HOME/.rbenv/bin:$PATH"
 test -d /usr/local/bin && export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 # Path for Heroku
 test -d /usr/local/heroku/ && export PATH="/usr/local/heroku/bin:$PATH"
-# Unfuck Support
-test -d $HOME/.uf/bin && export PATH="$PATH:$HOME/.uf/bin"
 
 # Load git completions
 git_completion_script=/usr/local/etc/bash_completion.d/git-completion.bash
@@ -67,6 +62,9 @@ export LSCOLORS=ExGxFxdxCxDxDxaccxaeex
 # Force ls to use colors (G) and use humanized file sizes (h)
 alias ls='ls -Gh'
 
+# Force grep to always use the color option and show line numbers
+export GREP_OPTIONS='--color=always'
+
 # Set sublime as the default editor
 which -s subl && export EDITOR="subl --wait"
 
@@ -81,5 +79,3 @@ alias gpo="git push origin"
 alias gph="git push heroku"
 
 source ~/.profile
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
