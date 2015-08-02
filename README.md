@@ -2,7 +2,11 @@
 Use what you like of it. These have treated me well.
 
 ### CAUTION
-Take heed when implementing these. If you do not know what or where these files go. **_DO NOT ATTEMPT_**. Ask a fellow developer to help you along.
+Take heed when implementing these. If you do not know what or where these files go.
+
+**_DO NOT ATTEMPT_**
+
+Ask a fellow developer to help you along.
 
 These are not dotfiles and do not work for everyone out of the box.
 
