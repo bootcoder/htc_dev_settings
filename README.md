@@ -10,8 +10,6 @@
 ### Backup
 You should always make a backup before modifying these types of files. Better safe than sorry...
 
-### Viewing
-Tip: These files don't look great in GitHub markdown. Click raw view or download.
 
 ### CAUTION
 Take heed when implementing these. These are not dotfiles and do not work for everyone out of the box. If you do not know what or where these files go.
