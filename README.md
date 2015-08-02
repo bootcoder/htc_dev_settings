@@ -1,5 +1,8 @@
 ## Dev Settings used on my personal machine
-Use what you like of it. These have treated me well.
+- bash_profile (rbenv && rvm)
+- List of Chrome extensions
+- gitconfig
+- sublime(3) user settings
 
 ### CAUTION
 Take heed when implementing these. If you do not know what or where these files go.
