@@ -2,9 +2,11 @@
 
 Collection of everything running in my development profile.
 
-Essential extensions denoted wit **_EMPHASIS_**
+Essential extensions denoted with **_EMPHASIS_**
 
 Most of these are choose your own adventure.
+
+Allow access to file URLs --- denotes option you __MUST__ set in extensions config.
 
 PR's welcome. :-)
 
