@@ -1,8 +1,16 @@
+# For debugging or just to have a fun little look under your BASH's hood.
+# set -x
+
 # echo is like puts for bash (bash is the program running in your terminal)
 echo "Loading ~/.bash_profile a shell script that runs in every new terminal you open"
 
 # $VARIABLE will render before the rest of the command is executed
 echo "Logged in as $USER at $(hostname)"
+
+# Set NVM
+export NVM_DIR="/Users/TyMacTwo/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
 
 # Rbenv autocomplete and shims
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -19,6 +27,12 @@ test -d $HOME/.rbenv/ && PATH="$HOME/.rbenv/bin:$PATH"
 test -d /usr/local/bin && export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 # Path for Heroku
 test -d /usr/local/heroku/ && export PATH="/usr/local/heroku/bin:$PATH"
+
+# Load Android SDK to path
+export PATH=${PATH}:/Users/apprentice/Desktop/android-sdk
+
+# Alias git to hub
+eval "$(hub alias -s)"
 
 # Load git completions
 git_completion_script=/usr/local/etc/bash_completion.d/git-completion.bash
@@ -68,14 +82,55 @@ export GREP_OPTIONS='--color=always'
 # Set sublime as the default editor
 which -s subl && export EDITOR="subl --wait"
 
-# Useful aliases
+# Aliases are useful. If I mistype a command three times I make an alias.
 
 alias e=subl
+alias a=atom
 alias be="bundle exec"
+alias dbc="cd ~/Dropbox/ACODE/DBC/dayJerbs"
+alias code="cd ~/Dropbox/ACODE/adBC"
 alias g=git
 alias cl=clear
 alias ga="git ca"
+alias gl="git lg"
+alias gb="git branch"
 alias gpo="git push origin"
 alias gph="git push heroku"
+alias hubit="hub browse"
+alias shitgun="shotgun"
+alias shogun="shotgun"
+alias shotfun="shotgun"
+alias rials="rails"
+alias gti="git"
+alias bs="be shotgun"
+alias 2reset="bundle install && be rake db:drop && be rake db:create && be rake db:migrate && be rake db:seed && be shotgun"
+alias 3reset="bundle install && be rake db:drop && be rake db:create && be rake db:migrate && be rake db:test:prepare && be rake db:seed && rails s"
 
-source ~/.profile
+# Grabs all current PR's from within a GIT repo.
+# Sets numerated branches. Switch to branch with:
+# git co pr/$PR_NUMBER
+function add_pr_remotes() {
+  mv .git/config .git/config-orig
+  awk '/remote "origin"/  {
+    print $0
+    getline;
+    print $0
+    getline;
+    print $0
+    print "\tfetch = +refs/pull/*/head:refs/remotes/origin/pr/*"
+  }1' .git/config-orig > .git/config
+  git fetch origin
+}
+
+# Human readable path now with extra fun emojis.
+# Think emojis are dumb or unprofessional?
+# Toggle off this code and use the last line instead.
+function inspect_path() {
+  old=$IFS
+  IFS=:
+  emojis=(☣️ ☮ ☢ 🏀 🍉 🌮 🐸 🌶 🐨 🌎 🌏 🐞 🐵 ☠️ 👻 👽 🤖 🐙 🚀 🐳 🕹 ☦)
+  emoji=${emojis[$RANDOM % 22]}
+  printf "$emoji : %s\n" $PATH
+  ISF=$old
+  # echo $PATH | tr ':' '\n'
+}
