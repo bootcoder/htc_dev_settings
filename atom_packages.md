@@ -1,0 +1,13 @@
+- atom-beautify@0.29.26
+- busy-signal@1.4.3
+- emmet@2.4.3
+- intentions@1.1.2
+- language-babel@2.65.1
+- language-haml@0.24.5
+- linter@2.1.4
+- linter-erb@1.1.0
+- linter-js-standard@3.9.1
+- linter-ui-default@1.6.0
+- rails-snippets@2.15.1
+- seti-syntax@1.1.3
+- seti-ui@1.8.0
