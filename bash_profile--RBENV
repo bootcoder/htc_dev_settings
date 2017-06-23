@@ -76,8 +76,12 @@ export LSCOLORS=ExGxFxdxCxDxDxaccxaeex
 # Force ls to use colors (G) and use humanized file sizes (h)
 alias ls='ls -Gh'
 
-# Force grep to always use the color option and show line numbers
-export GREP_OPTIONS='--color=always'
+# Force grep to output in color unless the output is piped or redirected to a
+# file (--color=auto) and display number lines (n)
+alias grep="grep --color=auto -n"
+# grep variant that always outputs in color (--color=always) and displays
+# number lines (n)
+alias grepc="grep --color=always -n"
 
 # Set sublime as the default editor
 which -s subl && export EDITOR="subl --wait"
