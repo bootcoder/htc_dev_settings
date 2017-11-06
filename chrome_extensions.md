@@ -10,7 +10,13 @@ Allow access to file URLs --- denotes option you __MUST__ set in extensions conf
 
 PR's welcome. :-)
 
----
+***
+
+#### Google Search Keyboard ShortCuts
+Hands down the most important extension listed here. This re-enables legacy Chrome functionality around mouse free Googling.
+See my tips and tricks for a how to guide. 
+
+***
 
 ##### Clear Cache 1.1.2
 Clear your cache and browsing data with a single click of a button.
